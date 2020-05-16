@@ -20,7 +20,7 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ] How can we partition our application into sub-applications?
 
-* We can modularize our application into it's own folder based on the what category the data is. For example, we would make seperate routers for comments and for users as they can be their own objects in the database. We can then pass the routers in as if they were middleware in the server file.
+* We can modularize our application by creating folders based on the what category the data is. For example, we would make seperate routers for comments and for users as they can be their own objects in the database. We can then pass the routers in as if they were middleware in the server file.
 
 ## Minimum Viable Product
 
