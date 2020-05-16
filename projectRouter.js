@@ -3,6 +3,8 @@ const express = require('express')
 const db = require("./data/helpers/projectModel")
 const router = express.Router()
 
+const { checkValidProject } = require('./middleware')
+
 router.get('/', async (req, res) => {
     try {
         const projects = await db.get()
@@ -24,7 +26,7 @@ router.get('/:id', async (req, res) => {
     }
 })
 
-router.post('/', async (req, res) => {
+router.post('/', checkValidProject, async (req, res) => {
     const body = req.body
     try {
         const project = await db.insert(body)
