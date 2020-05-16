@@ -13,6 +13,17 @@ router.get('/', async (req, res) => {
     }
 })
 
+router.get('/:id', async (req, res) => {
+    const id = req.params.id
+    try {
+        const projects = await db.getProjectActions(id)
+        if (projects) { return res.status(200).json(projects) }
+        res.status(404).json({ message: 'Where did the data go?' })
+    } catch(e) {
+        res.status(500).json({ message: 'uh oh' })
+    }
+})
+
 router.post('/', async (req, res) => {
     const body = req.body
     try {
